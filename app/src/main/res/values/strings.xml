@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">GMovieDB</string>
+    <string name="title_activity_main">MainActivity</string>
+
+
+    <string name="popular_list_technical_error">An error occurred while loading the popular movies. Please try again later.</string>
+    <string name="popular_list_api_error">There was a problem while retrieving popular movies from the source.</string>
+
+    <string name="retry">Retry</string>
+
 </resources>
