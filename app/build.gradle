@@ -39,6 +39,9 @@ def retrofit_version = '2.4.0'
 
 def gson_version = '2.8.5'
 
+def dexmaker_mockito_version = '2.19.0'
+def mockito_version = '2.+'
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "com.android.support:appcompat-v7:$appcompat_version"
@@ -46,6 +49,7 @@ dependencies {
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
     implementation "com.hannesdorfmann.mosby3:mvp:$mosby_mvp_version"
@@ -79,5 +83,9 @@ dependencies {
     implementation "android.arch.persistence.room:rxjava2:$room_version"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.google.code.gson:gson:$gson_version"
+
+    // Mockito
+    androidTestImplementation "com.linkedin.dexmaker:dexmaker-mockito:$dexmaker_mockito_version"
+    testImplementation "org.mockito:mockito-core:$mockito_version"
 
 }

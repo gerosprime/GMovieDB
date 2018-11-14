@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 
 import com.gerosprime.gmoviedb.components.dagger.DaggerGMovieDBComponent;
 import com.gerosprime.gmoviedb.components.dagger.GMovieDBComponent;
+import com.gerosprime.gmoviedb.components.dagger.modules.MovieDBAndroidModule;
 
 import javax.inject.Inject;
 
@@ -40,7 +41,9 @@ public class GMovieDBApplication
     @Override
     public void onCreate() {
         super.onCreate();
-        gMovieDBComponent = DaggerGMovieDBComponent.create();
+        gMovieDBComponent = DaggerGMovieDBComponent.builder()
+                .appModule(new MovieDBAndroidModule(this))
+                .build();
         gMovieDBComponent.inject(this);
     }
 }
