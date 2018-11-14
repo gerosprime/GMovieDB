@@ -5,6 +5,7 @@ import com.gerosprime.gmoviedb.components.retrofit.MovieDBApi;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import io.reactivex.Single;
 
@@ -15,7 +16,8 @@ public class RemotePopularMoviesLoader
     private final String authToken;
 
     @Inject
-    public RemotePopularMoviesLoader(MovieDBApi movieDBApi, String authToken) {
+    public RemotePopularMoviesLoader(MovieDBApi movieDBApi,
+                                     @Named("movieDBAuthToken") String authToken) {
         this.movieDBApi = movieDBApi;
         this.authToken = authToken;
     }

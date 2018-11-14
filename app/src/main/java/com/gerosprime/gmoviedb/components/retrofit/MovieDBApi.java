@@ -21,8 +21,8 @@ public class MovieDBApi {
 
         if (retrofit == null) {
 
-
             Gson gson = new GsonBuilder()
+                    .setDateFormat("yyyy-MM-dd")
                     .create();
 
             retrofit = new Retrofit.Builder()
@@ -33,6 +33,10 @@ public class MovieDBApi {
         }
 
         return retrofit;
+    }
+
+    public String getUrl() {
+        return url;
     }
 
     public <T> T use(Class<T> retrofitClass) {
